@@ -12,7 +12,7 @@ export default defineConfig({
     // 按需自动导入API
     AutoImport({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-      imports: ["vue", "vue-router"],
+      imports: ["vue", "vue-router", "pinia"],
       // 在 vue 模板中自动导入
       vueTemplate: true,
       // 指定自动导入函数TS类型声明文件路径 (false:关闭自动生成)
