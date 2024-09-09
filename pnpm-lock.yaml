@@ -20,6 +20,9 @@ importers:
       vue:
         specifier: ^3.4.29
         version: 3.5.3(typescript@5.4.5)
+      vue-i18n:
+        specifier: 9.9.1
+        version: 9.9.1(vue@3.5.3(typescript@5.4.5))
       vue-router:
         specifier: ^4.4.3
         version: 4.4.3(vue@3.5.3(typescript@5.4.5))
@@ -437,6 +440,18 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
+
+  '@intlify/core-base@9.9.1':
+    resolution: {integrity: sha512-qsV15dg7jNX2faBRyKMgZS8UcFJViWEUPLdzZ9UR0kQZpFVeIpc0AG7ZOfeP7pX2T9SQ5jSiorq/tii9nkkafA==}
+    engines: {node: '>= 16'}
+
+  '@intlify/message-compiler@9.9.1':
+    resolution: {integrity: sha512-zTvP6X6HeumHOXuAE1CMMsV6tTX+opKMOxO1OHTCg5N5Sm/F7d8o2jdT6W6L5oHUsJ/vvkGefHIs7Q3hfowmsA==}
+    engines: {node: '>= 16'}
+
+  '@intlify/shared@9.9.1':
+    resolution: {integrity: sha512-b3Pta1nwkz5rGq434v0psHwEwHGy1pYCttfcM22IE//K9owbpkEvFptx9VcuRAxjQdrO2If249cmDDjBu5wMDA==}
+    engines: {node: '>= 16'}
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
@@ -2520,6 +2535,12 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+  vue-i18n@9.9.1:
+    resolution: {integrity: sha512-xyQ4VspLdNSPTKBFBPWa1tvtj+9HuockZwgFeD2OhxxXuC2CWeNvV4seu2o9+vbQOyQbhAM5Ez56oxUrrnTWdw==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      vue: ^3.0.0
+
   vue-router@4.4.3:
     resolution: {integrity: sha512-sv6wmNKx2j3aqJQDMxLFzs/u/mjA9Z5LCgy6BE0f7yFWMjrPLnS/sPNn8ARY/FXw6byV18EFutn5lTO6+UsV5A==}
     peerDependencies:
@@ -2910,6 +2931,18 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.3': {}
+
+  '@intlify/core-base@9.9.1':
+    dependencies:
+      '@intlify/message-compiler': 9.9.1
+      '@intlify/shared': 9.9.1
+
+  '@intlify/message-compiler@9.9.1':
+    dependencies:
+      '@intlify/shared': 9.9.1
+      source-map-js: 1.2.0
+
+  '@intlify/shared@9.9.1': {}
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
@@ -5028,6 +5061,13 @@ snapshots:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+
+  vue-i18n@9.9.1(vue@3.5.3(typescript@5.4.5)):
+    dependencies:
+      '@intlify/core-base': 9.9.1
+      '@intlify/shared': 9.9.1
+      '@vue/devtools-api': 6.6.3
+      vue: 3.5.3(typescript@5.4.5)
 
   vue-router@4.4.3(vue@3.5.3(typescript@5.4.5)):
     dependencies:
