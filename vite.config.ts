@@ -8,6 +8,18 @@ import Components from "unplugin-vue-components/vite";
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
   return {
+    css: {
+      // CSS 预处理器
+      preprocessorOptions: {
+        // 定义全局 SCSS 变量
+        scss: {
+          javascriptEnabled: true,
+          additionalData: `
+            @use "@/styles/variables.scss" as *;
+          `,
+        },
+      },
+    },
     plugins: [
       vue(),
       // 按需自动导入API
