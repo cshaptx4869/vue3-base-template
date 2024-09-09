@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vue-tsc --build --force & vite build",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -42,7 +42,6 @@
     "eslint-plugin-vue": "^9.28.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
-    "npm-run-all2": "^6.2.0",
     "postcss": "^8.4.41",
     "postcss-html": "^1.7.0",
     "postcss-scss": "^4.0.9",
