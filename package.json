@@ -1,6 +1,6 @@
 {
-  "name": "vue3-scaffold",
-  "version": "0.0.0",
+  "name": "vue3-base-template",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -43,17 +43,18 @@
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
     "npm-run-all2": "^6.2.0",
-    "sass": "^1.77.8",
     "postcss": "^8.4.41",
     "postcss-html": "^1.7.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
+    "sass": "^1.77.8",
     "stylelint": "^16.9.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^4.6.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard": "^36.0.1",
+    "terser": "^5.31.6",
     "typescript": "~5.4.0",
     "unplugin-auto-import": "^0.17.8",
     "unplugin-vue-components": "^0.26.0",
@@ -87,5 +88,11 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "repository": "https://github.com/cshaptx4869/vue3-base-template.git",
+  "author": "cshaptx4869",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
