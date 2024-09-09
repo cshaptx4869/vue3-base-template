@@ -1,8 +1,9 @@
-import { fileURLToPath, URL } from "node:url";
-import { defineConfig, loadEnv, type ConfigEnv, type UserConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { fileURLToPath, URL } from "node:url";
+import UnoCSS from "unocss/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import { defineConfig, loadEnv, type ConfigEnv, type UserConfig } from "vite";
 import mockDevServerPlugin from "vite-plugin-mock-dev-server";
 import VueDevTools from "vite-plugin-vue-devtools";
 import packageJson from "./package.json";
@@ -98,6 +99,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         dirs: ["src/components", "src/**/components"],
         // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
         dts: "src/types/components.d.ts",
+      }),
+      UnoCSS({
+        hmrTopLevelAwait: false,
       }),
       // MOCK服务
       env.VITE_APP_MOCK === "true" ? mockDevServerPlugin() : null,
