@@ -4,6 +4,7 @@ import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import mockDevServerPlugin from "vite-plugin-mock-dev-server";
+import VueDevTools from "vite-plugin-vue-devtools";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -39,8 +40,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
         dts: "src/types/components.d.ts",
       }),
-      // MOCK 服务
+      // MOCK服务
       env.VITE_APP_MOCK === "true" ? mockDevServerPlugin() : null,
+      // Debug服务
+      env.VITE_APP_DEBUG === "true"
+        ? VueDevTools({
+            openInEditorHost: `http://localhost:${env.VITE_APP_PORT}`,
+          })
+        : null,
     ],
     resolve: {
       alias: {
