@@ -6,3 +6,12 @@ declare module "*.vue" {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
+
+/**
+ * 响应数据
+ */
+interface ResponseData<T = any> {
+  code: string;
+  data: T;
+  msg: string;
+}
