@@ -36,7 +36,8 @@ defineProps({
 .mesh-loader {
   position: fixed;
   inset: 0;
-  z-index: v-bind(zindex);
+  /* stylelint-disable-next-line */
+  z-index: v-bind(zIndex);
   background-color: v-bind(background);
 
   .set {
