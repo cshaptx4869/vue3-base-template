@@ -6,11 +6,17 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/404",
+      redirect: "/home",
     },
     {
-      path: "/404",
-      component: () => import("@/views/error-page/404.vue"),
+      path: "/home",
+      name: "Home",
+      component: () => import("@/views/home/index.vue"),
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: () => import("@/views/login/index.vue"),
     },
     {
       path: "/:pathMatch(.*)*",
