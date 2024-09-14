@@ -99,14 +99,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           globalsPropValue: true,
         },
         // 指定自动导入函数TS类型声明文件路径 (false:关闭自动生成)
-        dts: "src/types/auto-imports.d.ts",
+        // dts: "src/types/auto-imports.d.ts",
+        dts: false,
       }),
       // 按需自动导入组件
       Components({
         // 指定自定义组件位置(默认:src/components)
         dirs: ["src/components", "src/**/components"],
         // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
-        dts: "src/types/components.d.ts",
+        // dts: "src/types/components.d.ts",
+        dts: false,
       }),
       UnoCSS({
         hmrTopLevelAwait: false,
