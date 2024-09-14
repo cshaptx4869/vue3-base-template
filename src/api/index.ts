@@ -1,3 +1,4 @@
+import AuthAPI from "./modules/auth";
 import UserAPI from "./modules/user";
 
-export { UserAPI };
+export { AuthAPI, UserAPI };

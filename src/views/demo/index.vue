@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineOptions({
-  name: "404",
+  name: "Demo",
 });
 </script>
 
 <template>
   <div>
-    <h2>404</h2>
+    <h2>Demo</h2>
+    <div>Query: {{ $route.query }}</div>
   </div>
 </template>
 

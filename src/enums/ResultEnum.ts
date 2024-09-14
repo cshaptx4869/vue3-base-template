@@ -2,12 +2,7 @@
  * 响应码枚举
  */
 export const enum ResultEnum {
-  // 成功
-  SUCCESS = "00000",
-
-  // 错误
-  ERROR = "B0001",
-
-  // 令牌无效或过期
-  TOKEN_INVALID = "A0230",
+  SUCCESS = 200,
+  ACCESS_TOKEN_INVALID = 4003,
+  REFRESH_TOKEN_INVALID = 4004,
 }

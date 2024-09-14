@@ -90,6 +90,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         imports: ["vue", "vue-router", "pinia", "vue-i18n"],
         // 在 vue 模板中自动导入
         vueTemplate: true,
+        // eslint 规则
+        eslintrc: {
+          // 是否自动生成 eslint 规则，建议生成之后设置 false
+          enabled: false,
+          // 指定自动导入函数 eslint 规则的文件
+          filepath: ".eslintrc-auto-import.json",
+          globalsPropValue: true,
+        },
         // 指定自动导入函数TS类型声明文件路径 (false:关闭自动生成)
         dts: "src/types/auto-imports.d.ts",
       }),

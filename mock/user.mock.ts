@@ -5,7 +5,7 @@ export default defineMock([
     url: "/user/list",
     method: ["GET"],
     body: {
-      code: "00000",
+      code: 200,
       data: [
         { id: 1, username: "tom", age: 20 },
         { id: 2, username: "jerry", age: 18 },

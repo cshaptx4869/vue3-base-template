@@ -7,6 +7,7 @@ export {}
 
 declare module "vue" {
   export interface GlobalComponents {
+    IconFont: (typeof import("./../components/IconFont/IconFont.vue"))["default"];
     MeshLoader: (typeof import("./../components/MeshLoader/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];

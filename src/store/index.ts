@@ -9,4 +9,4 @@ export function setupStore(app: App<Element>) {
 
 export default store;
 
-export * from "./modules/app";
+export * from "./modules/auth";

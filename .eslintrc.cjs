@@ -8,6 +8,7 @@ module.exports = {
   plugins: ["vue", "@typescript-eslint"],
   extends: [
     // https://eslint.vuejs.org/user-guide/#usage
+    ".eslintrc-auto-import.json",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
     "prettier",

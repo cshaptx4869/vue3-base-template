@@ -7,15 +7,6 @@ declare module "*.vue" {
   export default component;
 }
 
-/**
- * 响应数据
- */
-interface ResponseData<T = any> {
-  code: string;
-  data: T;
-  msg: string;
-}
-
 // TypeScript 类型提示都为 string： https://github.com/vitejs/vite/issues/6930
 interface ImportMetaEnv {
   /** 应用端口 */
