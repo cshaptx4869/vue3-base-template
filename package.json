@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^1.7.7",
     "crypto-js": "^4.2.0",
+    "nprogress": "^0.2.0",
     "pinia": "^2.2.2",
     "qs": "^6.13.0",
     "vue": "^3.4.29",
@@ -31,6 +32,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20.14.5",
+    "@types/nprogress": "^0.2.3",
     "@types/qs": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",

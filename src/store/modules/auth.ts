@@ -8,7 +8,7 @@ import { CacheEnum } from "@/enums/CacheEnum";
 export const useAuthStore = defineStore("auth", () => {
   const accessToken = ref(localCache.get(CacheEnum.ACCESS_TOKEN, ""));
   const refreshToken = ref(localCache.get(CacheEnum.REFRESH_TOKEN, ""));
-  const isLoggedIn = computed(() => !!refreshToken.value);
+  const isLoggedIn = computed(() => !!accessToken.value);
 
   watch(accessToken, (newValue) => {
     if (newValue) {
@@ -19,7 +19,7 @@ export const useAuthStore = defineStore("auth", () => {
   });
   watch(refreshToken, (newValue) => {
     if (newValue) {
-      localCache.set(CacheEnum.REFRESH_TOKEN, newValue, 3 * 86400);
+      localCache.set(CacheEnum.REFRESH_TOKEN, newValue);
     } else {
       localCache.delete(CacheEnum.REFRESH_TOKEN);
     }
