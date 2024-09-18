@@ -1,4 +1,5 @@
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import { fileURLToPath, URL } from "node:url";
 import UnoCSS from "unocss/vite";
 import AutoImport from "unplugin-auto-import/vite";
@@ -84,6 +85,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: [
       vue(),
+      // jsx、tsx语法支持
+      vueJsx(),
       // 按需自动导入API
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
