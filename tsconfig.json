@@ -11,7 +11,9 @@
     "jsxImportSource": "vue",
     "lib": ["esnext", "dom"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noImplicitThis": true,
     "noLib": false,
     "paths": {
       "@/*": ["src/*"]
@@ -22,7 +24,8 @@
     "strict": true,
     "target": "esnext",
     "types": [],
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true
   },
   "exclude": ["node_modules", "dist", "**/*.js"],
   "include": [
