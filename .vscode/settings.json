@@ -77,4 +77,7 @@
   "i18n-ally.localesPaths": [
     "src/lang"
   ],
+  "i18n-ally.parsers.typescript.compilerOptions": {
+    "moduleResolution": "node",
+  }
 }
