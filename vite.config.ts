@@ -91,6 +91,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
         imports: ["vue", "vue-router", "pinia", "vue-i18n"],
+        // 自定义解析器
+        resolvers: [],
         // 在 vue 模板中自动导入
         vueTemplate: true,
         // eslint 规则
@@ -109,6 +111,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       Components({
         // 指定自定义组件位置(默认:src/components)
         dirs: ["src/components", "src/**/components"],
+        // 自定义解析器
+        resolvers: [],
         // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
         // dts: "src/types/components.d.ts",
         dts: false,
