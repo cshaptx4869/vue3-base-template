@@ -14,16 +14,22 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
   return {
     build: {
-      chunkSizeWarningLimit: 2000, // 消除打包大小超过500kb警告
-      minify: "terser", // Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效
+      // 消除打包大小超过500kb警告
+      chunkSizeWarningLimit: 2000,
+      // Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效
+      minify: "terser",
       terserOptions: {
         compress: {
-          keep_infinity: true, // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
-          drop_console: true, // 生产环境去除 console
-          drop_debugger: true, // 生产环境去除 debugger
+          // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
+          keep_infinity: true,
+          // 生产环境去除 console
+          drop_console: true,
+          // 生产环境去除 debugger
+          drop_debugger: true,
         },
         format: {
-          comments: false, // 删除注释
+          // 删除注释
+          comments: false,
         },
       },
       rollupOptions: {
@@ -67,7 +73,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       },
     },
     define: {
-      /** 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示 */
+      // 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示
       __APP_INFO__: JSON.stringify({
         pkg: {
           name: packageJson.name,
@@ -87,10 +93,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       vue(),
       // jsx、tsx语法支持
       vueJsx(),
-      // 按需自动导入API
+      // 按需自动导入APIs
       AutoImport({
-        // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
-        imports: ["vue", "vue-router", "pinia", "vue-i18n"],
+        // 注册全局导入项
+        imports: [
+          // 预设项 (自动导入Vue相关函数,如ref、reactive、toRef等)
+          "vue",
+          "vue-router",
+          "pinia",
+          "vue-i18n",
+        ],
         // 自定义解析器
         resolvers: [],
         // 在 vue 模板中自动导入
@@ -104,18 +116,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           globalsPropValue: true,
         },
         // 指定自动导入函数TS类型声明文件路径 (false:关闭自动生成)
-        // dts: "src/types/auto-imports.d.ts",
-        dts: false,
+        dts: "src/types/auto-imports.d.ts",
       }),
       // 按需自动导入组件
       Components({
         // 指定自定义组件位置(默认:src/components)
         dirs: ["src/components", "src/**/components"],
-        // 自定义解析器
+        // 自定义解析器(根据组件名称将组件定向到特定包的函数)
         resolvers: [],
         // 指定自动导入组件TS类型声明文件路径 (false:关闭自动生成)
-        // dts: "src/types/components.d.ts",
-        dts: false,
+        dts: "src/types/components.d.ts",
       }),
       UnoCSS({
         hmrTopLevelAwait: false,
